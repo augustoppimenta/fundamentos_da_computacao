@@ -1,0 +1,47 @@
+#include<stdio.h>;
+#include<stdlib.h>;
+#include<math.h>;
+int main (){
+int BASE[15] = {2,3,4,5,6,7,8,9,10,11,12,13,14,15,16}, base, dividendo, quociente = 1, resto = 0, RESULTADO[1000] = {}, cont = 0, i = 0;
+printf("Digite o valor para conversao (DECIMAL) : ");
+scanf("%d",&dividendo);
+printf("Digite a base de conversao (DE 0 A 9) : ");
+scanf("%d",&base);
+while (quociente >= 1){
+      quociente = dividendo / base;
+      quociente = abs(quociente);
+        if (i <= cont){
+            resto = dividendo - (quociente * base);
+            RESULTADO[i] = resto;
+            i++;
+        }
+      dividendo = quociente;
+      cont++;
+}
+for (i = cont - 1; i >= 0; i--){
+
+    if(RESULTADO[i] == 10){
+        printf("A ");
+    }
+    else if(RESULTADO[i] == 11){
+        printf("B ");
+    }
+    else if(RESULTADO[i] == 12){
+        printf("C ");
+    }
+    else if(RESULTADO[i] == 13){
+        printf("D ");
+    }
+    else if(RESULTADO[i] == 14){
+        printf("E ");
+    }
+    else if(RESULTADO[i] == 15){
+        printf("F ");
+    }
+    else{
+      printf("%d ", RESULTADO[i]);
+    }
+  }
+system ("pause");
+return 0;
+}
